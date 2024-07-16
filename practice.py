@@ -1,33 +1,50 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
-travel = pd.read_csv("data/travel(2016_2019).csv", encoding = 'euc-kr')
-travel
+#(단기체류외국인) 월별 단기체류외국인 국적(지역)별 현황
 
-travel2 = travel.copy() #복사 
-travel2_filled = travel2.fillna(0)
-travel2.head()
 
-#1. 변수 이름 변경 했는지?
-travel2 = travel2.rename(columns={"2016 년" : "2016"}) #이 코드까지 쳐야지 확정됨. 
-travel2 = travel2.rename(columns={"2017 년" : "2017"})
-travel2 = travel2.rename(columns={"2018 년" : "2018"})
-travel2 = travel2.rename(columns={"2019 년" : "2019"})
-travel2.head()
+# 0. 데이터 불러오기
+df = pd.read_csv('data/foreigner.csv',  encoding='euc-kr')
+df.columns
 
-#2. 행들을 필터링 했는지?
-travel2.query("통계분류 == '7월'")
 
-travel2_filled = travel2.fillna(0)
-travel2_filled
+# 1.변수 영어로 변경
+df = df.rename(columns={
+                         '년': 'year',
+                         '월': 'month',
+                         '국적지역': 'nation',
+                         '단기체류외국인 수': 'visitors'
+                        })
 
-#3. 새로운 변수를 생성했는지?
-travel2["total"] = travel2["2016"] + travel2["2017"] + travel2["2018"] + travel2["2019"]
-travel2.head()
+df.head()
 
-#4. 그룹 변수 기준으로 요약을 했는지?
-travel2.query('total >= 100')
 
-#5. 정렬했는지? 
-travel2.sort_values('total')
+# 2. 2023년도만 뽑아오기
+df_23 = df.query("year == 2023")
+df_23.head()
+
+# 월 삭제
+df_23 = df_23.drop(columns = 'month')
+df_23.head()
+
+
+# 3. 23년도 방문자 평균값 확인
+avg_23 = df_23['visitors'].mean()
+avg_23
+
+
+# 4. (월 제외) 23년도 국가별 방문자 수 구하기
+df_23 = df_23.groupby('nation') \
+             .agg(sum_visitor = ('visitors', 'sum'))
+print(df_23, type(df_23))
+
+
+# 5. avg_23(23년도 방문자 평균)과 비교하기
+df_23['compare'] = np.where(df_23['sum_visitor'] >= 2962.0, 'high', 'low')
+df_23
+
+# 내림차순 & 상위 값 5개 추출
+df_23.sort_values('sum_visitor', ascending = False).head(5)
 
