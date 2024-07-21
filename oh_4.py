@@ -52,7 +52,7 @@ df_22.loc[24:30, ['class1']] = "income"
 
 
 # 4. 'class2'도 영문으로 변경
-df_22.loc[0, ["class2"]] = "sum"
+df_22.loc[0, ["class2"]] = "sum_22"
 
 #sex
 df_22.loc[df_22["class2"] == "남자", "class2"] = "M"
@@ -97,9 +97,12 @@ df_22.loc[df_22["class2"] == "500~600만원 미만", "class2"] = "500~600"
 df_22.loc[df_22["class2"] == "600만원 이상"    , "class2"] = "600~"
 
 
+# class1과 class2를 index로 설정
+df_22 = df_22.set_index(['class1', 'class2'])
+
 # 5. 분석에 필요한 부분만 추출
-# df_22 중 지출액 부분 총계만 추출(국내전체/관광전체/기타전체) 
-df_22_sum = df_22.loc[0, ["dm_total", "tr_total", "ot_total"]]
+# dm_total, tr_total, ot_total만 추출
+df_22_sum = df_22.loc["category-sum", ["dm_total", "tr_total", "ot_total"]]
 df_22_sum
 
 -----------------------------------------------------------------
@@ -128,7 +131,7 @@ df_18.loc[17:20, ['class1']] = "edu"
 df_18.loc[21:23, ['class1']] = "fam"
 df_18.loc[24:30, ['class1']] = "income"
 
-df_18.loc[0, ["class2"]] = "sum"
+df_18.loc[0, ["class2"]] = "sum_18"
 df_18.loc[df_18["class2"] == "남자", "class2"] = "M"
 df_18.loc[df_18["class2"] == "여자", "class2"] = "F"
 df_18.loc[df_18["class2"] == "15~19세"  , "class2"] = "10s"
@@ -160,7 +163,11 @@ df_18.loc[df_18["class2"] == "400~500만원 미만", "class2"] = "400~500"
 df_18.loc[df_18["class2"] == "500~600만원 미만", "class2"] = "500~600"
 df_18.loc[df_18["class2"] == "600만원 이상"    , "class2"] = "600~"
 
-df_18_sum = df_18.loc[0, ["dm_total", "tr_total", "ot_total"]]
+# class1과 class2를 index로 설정
+df_18 = df_18.set_index(['class1', 'class2'])
+
+# dm_total, tr_total, ot_total만 추출
+df_18_sum = df_18.loc["category-sum", ["dm_total", "tr_total", "ot_total"]]
 df_18_sum
 -----------------------------------------------------------------
 # 2019년
@@ -178,15 +185,15 @@ df_19 = df_19.rename(columns = {'통계분류(1)' : 'class1',
                                 '기타당일'    : 'ot_1day'
                           })
 
-df_19.loc[0, ['class1']] = "category-sum"
-df_19.loc[1:2, ['class1']] = "sex"
-df_19.loc[3:9, ['class1']] = "age"
+df_19.loc[0,     ['class1']] = "category-sum"
+df_19.loc[1:2,   ['class1']] = "sex"
+df_19.loc[3:9,   ['class1']] = "age"
 df_19.loc[10:16, ['class1']] = "job"
 df_19.loc[17:20, ['class1']] = "edu"
 df_19.loc[21:23, ['class1']] = "fam"
 df_19.loc[24:30, ['class1']] = "income"
 
-df_19.loc[0, ["class2"]] = "sum"
+df_19.loc[0, ["class2"]] = "sum_19"
 df_19.loc[df_19["class2"] == "남자", "class2"] = "M"
 df_19.loc[df_19["class2"] == "여자", "class2"] = "F"
 df_19.loc[df_19["class2"] == "15~19세"  , "class2"] = "10s"
@@ -218,7 +225,11 @@ df_19.loc[df_19["class2"] == "400~500만원 미만", "class2"] = "400~500"
 df_19.loc[df_19["class2"] == "500~600만원 미만", "class2"] = "500~600"
 df_19.loc[df_19["class2"] == "600만원 이상"    , "class2"] = "600~"
 
-df_19_sum = df_19.loc[0, ["dm_total", "tr_total", "ot_total"]]
+# class1과 class2를 index로 설정
+df_19 = df_19.set_index(['class1', 'class2'])
+
+# dm_total, tr_total, ot_total만 추출
+df_19_sum = df_19.loc["category-sum", ["dm_total", "tr_total", "ot_total"]]
 df_19_sum
 -----------------------------------------------------------------
 # 2020년
@@ -236,15 +247,15 @@ df_20 = df_20.rename(columns = {'통계분류(1)' : 'class1',
                                 '기타당일'    : 'ot_1day'
                           })
 
-df_20.loc[0, ['class1']] = "category-sum"
-df_20.loc[1:2, ['class1']] = "sex"
-df_20.loc[3:9, ['class1']] = "age"
+df_20.loc[0,     ['class1']] = "category-sum"
+df_20.loc[1:2,   ['class1']] = "sex"
+df_20.loc[3:9,   ['class1']] = "age"
 df_20.loc[10:16, ['class1']] = "job"
 df_20.loc[17:20, ['class1']] = "edu"
 df_20.loc[21:23, ['class1']] = "fam"
 df_20.loc[24:30, ['class1']] = "income"
 
-df_20.loc[0, ["class2"]] = "sum"
+df_20.loc[0, ["class2"]] = "sum_20"
 df_20.loc[df_20["class2"] == "남자", "class2"] = "M"
 df_20.loc[df_20["class2"] == "여자", "class2"] = "F"
 df_20.loc[df_20["class2"] == "15~19세"  , "class2"] = "10s"
@@ -276,7 +287,11 @@ df_20.loc[df_20["class2"] == "400~500만원 미만", "class2"] = "400~500"
 df_20.loc[df_20["class2"] == "500~600만원 미만", "class2"] = "500~600"
 df_20.loc[df_20["class2"] == "600만원 이상"    , "class2"] = "600~"
 
-df_20_sum = df_20.loc[0, ["dm_total", "tr_total", "ot_total"]]
+# class1과 class2를 index로 설정
+df_20 = df_20.set_index(['class1', 'class2'])
+
+# dm_total, tr_total, ot_total만 추출
+df_20_sum = df_20.loc["category-sum", ["dm_total", "tr_total", "ot_total"]]
 df_20_sum
 -----------------------------------------------------------------
 # 2021년
@@ -302,7 +317,7 @@ df_21.loc[17:20, ['class1']] = "edu"
 df_21.loc[21:23, ['class1']] = "fam"
 df_21.loc[24:30, ['class1']] = "income"
 
-df_21.loc[0, ["class2"]] = "sum"
+df_21.loc[0, ["class2"]] = "sum_21"
 df_21.loc[df_21["class2"] == "남자", "class2"] = "M"
 df_21.loc[df_21["class2"] == "여자", "class2"] = "F"
 df_21.loc[df_21["class2"] == "15~19세"  , "class2"] = "10s"
@@ -334,8 +349,11 @@ df_21.loc[df_21["class2"] == "400~500만원 미만", "class2"] = "400~500"
 df_21.loc[df_21["class2"] == "500~600만원 미만", "class2"] = "500~600"
 df_21.loc[df_21["class2"] == "600만원 이상"    , "class2"] = "600~"
 
-df_21_sum = df_21.loc[0, ["dm_total", "tr_total", "ot_total"]]
+# class1과 class2를 index로 설정
+df_21 = df_21.set_index(['class1', 'class2'])
 
+# dm_total, tr_total, ot_total만 추출
+df_21_sum = df_21.loc["category-sum", ["dm_total", "tr_total", "ot_total"]]
 df_21_sum
 -----------------------------------------------------------------
 # 전처리 작업 끝
@@ -344,9 +362,17 @@ df_19_sum
 df_20_sum
 df_21_sum
 df_22_sum
-
+------------------------------------------------------------------
 #분석 기간별로 데이터 그룹화
-bf_covid = pd.concat([df_18_sum, df_19_sum], axis = 1) #before covid
-du_covid = pd.concat([df_20_sum, df_21_sum], axis = 1) #during covid
-af_covid = df_22_sum #after covid
+#before covid
+bf_covid = pd.concat([df_18_sum, df_19_sum])
+bf_covid
+
+#during covid
+du_covid = pd.concat([df_20_sum, df_21_sum])
+du_covid
+
+#after covid
+af_covid = df_22_sum
+af_covid
 ------------------------------------------------------------------
