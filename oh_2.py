@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-# 1. 데이터 불러오기
+# 1. 2022년 데이터 불러오기
 
 # 원본 데이터(excel)상, 1행과 2행 일부 부분이 병합되어 있음. 
 # 2행부터 데이터를 받고자 header = 1로 설정하여 데이터 읽음. 
@@ -69,7 +69,8 @@ df_new.loc[df_new["class2"] == "400~500만원 미만", "class2"] = "400~500"
 df_new.loc[df_new["class2"] == "500~600만원 미만", "class2"] = "500~600"
 df_new.loc[df_new["class2"] == "600만원 이상", "class2"] = "600~"
 
-df_new
+df_2022 = df_new
+df_2022
 
 #############################################################################
 # 5. 'class1'과 'class2'를 df_new의 index로 설정[선택사항: set_index 안배움]
