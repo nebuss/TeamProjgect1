@@ -80,34 +80,34 @@ df_2022
 ############################################################################
 # 여기까지 했음요
 
-# # 6. age별 dm_total 그래프로 확인해 보기
-# import seaborn as sns
-# age_group = pd.DataFrame(df_new.loc['age', 'dm_total'])
-# type(df_new.loc['age', 'dm_total'])
-# type(age_group)
-# 
-# #그래프로!!
-# sns.barplot(data = age_group, x = 'class2', y = 'dm_total')
-# 
+# 6. age별 dm_total 그래프로 확인해 보기
+import seaborn as sns
+age_group = pd.DataFrame(df_new.loc['age', 'dm_total'])
+type(df_new.loc['age', 'dm_total'])
+type(age_group)
+
+#그래프로!!
+sns.barplot(data = age_group, x = 'class2', y = 'dm_total')
+
+plt.show()
+plt.clf()
+
+
+
+#age_group = df_new.query('class1 == "age"')
+#age_group
+#df_new.loc[[df_new.query('class1 == "age"')], 'dm_total']
+#a = df_new.query('class1 == "age"')
+
+# dm_total_age = sns.barplot(data = df_new, x = 'class2', y = 'dm_total')
 # plt.show()
 # plt.clf()
-# 
-# 
-# 
-# #age_group = df_new.query('class1 == "age"')
-# #age_group
-# #df_new.loc[[df_new.query('class1 == "age"')], 'dm_total']
-# #a = df_new.query('class1 == "age"')
-# 
-# # dm_total_age = sns.barplot(data = df_new, x = 'class2', y = 'dm_total')
-# # plt.show()
-# # plt.clf()
-# 
-# df_new['dm_total']
-# 
-# #dm_total 내림차순으로 정렬
-# dm_total_age = age_group.sort_values('dm_total', ascending = False)
-# 
-# dm_total_age.plot.bar(rot = 0)
-# plt.show()
-# plt.clf()
+
+df_new['dm_total']
+
+#dm_total 내림차순으로 정렬
+dm_total_age = age_group.sort_values('dm_total', ascending = False)
+
+dm_total_age.plot.bar(rot = 0)
+plt.show()
+plt.clf()
