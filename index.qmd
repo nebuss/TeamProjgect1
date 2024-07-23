@@ -1,5 +1,5 @@
 ---
-title: "1인 평균 국내여행 지출액 비교: COVID-19 기간을 구분으로"
+title: "프로젝트 1"
 author: "웰컴 투 코리아😎(박수빈, 문지윤, 유은서, 오현욱)"
 date: "2024-07-24"
 categories: [bigdata]
