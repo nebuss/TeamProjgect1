@@ -727,7 +727,7 @@ ex_df2
 
 </br>
 
-- 년도별 dm_total
+#### 년도별 dm_total
 ```{python}
 plt.figure(figsize=(10, 6))
 sns.barplot(data = ex_df2, x = 'dm_total', y = 'class2', palette = 'viridis')
@@ -740,7 +740,7 @@ plt.clf()
 
 </br>
 
-### 증감률(%) = (변화량 / 초기값) x 100
+- 증감률(%) = (변화량 / 초기값) x 100
 ```{python}
 #ex_df2['증감률'] = (b년도-a년도)/a년도 X 100
 
@@ -753,32 +753,34 @@ dm_22 = ex_df2.loc['sum_22', 'dm_total'] #22년도 dm_total
 
 </br>
 
-- 18년도 -> 19년도: 2.4% 증가
+- 18년도 -> 19년도: `2.4%` 증가
 ```{python}
 ((dm_19 - dm_18) / dm_18) * 100 
 ```
 
 
-- 19년도 -> 20년도: -45.4% 감소
+- 19년도 -> 20년도: `-45.4%` 감소
 ```{python}
 ((dm_20 - dm_19) / dm_19) * 100 
 ```
 
 
-- 20년도 -> 21년도: 7.3% 증가
+- 20년도 -> 21년도: `7.3%` 증가
 ```{python}
 ((dm_21 - dm_20) / dm_20) * 100
 ```
 
 
-- 22년도: 33.2% 증가
+- 21년도 -> 22년도: `33.2%` 증가
 ```{python}
 ((dm_22 - dm_21) / dm_21) * 100 
 ```
 
 </br>
 
-- 년도별 tr_total
+***
+
+#### 년도별 tr_total
 ```{python}
 plt.figure(figsize=(10, 6))
 sns.barplot(data = ex_df2, x = 'tr_total', y = 'class2', palette = 'viridis')
@@ -788,11 +790,11 @@ plt.title('TR Total by Class2')
 plt.show()
 plt.clf()
 ```
----
+***
 
 </br>
 
-### 증감률(%) = (변화량 / 초기값) x 100
+- 증감률(%) = (변화량 / 초기값) x 100
 ```{python}
 tr_18 = ex_df2.loc['sum_18', 'tr_total'] #18년도 tr_total
 tr_19 = ex_df2.loc['sum_19', 'tr_total'] #19년도 tr_total
@@ -803,33 +805,33 @@ tr_22 = ex_df2.loc['sum_22', 'tr_total'] #22년도 tr_total
 
 </br>
 
-- 18년도 -> 19년도: 8.0% 증가
+- 18년도 -> 19년도: `8.0%` 증가
 ```{python}
 ((tr_19 - tr_18) / tr_18) * 100
 ```
 
-- 19년도 -> 20년도: -46.8% 감소
+- 19년도 -> 20년도: `-46.8%` 감소
 ```{python}
 ((tr_20 - tr_19) / tr_19) * 100
 ```
 
 
-- 20년도 -> 21년도: 14.11% 증가
+- 20년도 -> 21년도: `14.11%` 증가
 ```{python}
 ((tr_21 - tr_20) / tr_20) * 100
 ```
 
 
-- 21년도 -> 22년도: 36.9% 증가
+- 21년도 -> 22년도: `36.9%` 증가
 ```{python}
 ((tr_22 - tr_21) / tr_21) * 100
 ```
 
 </br>
 
----
+***
 
-- 년도별 ot_total
+#### 년도별 ot_total
 ```{python}
 plt.figure(figsize=(10, 6))
 sns.barplot(data = ex_df2, x = 'ot_total', y = 'class2', palette = 'viridis')
@@ -854,25 +856,25 @@ ot_22 = ex_df2.loc['sum_22', 'ot_total'] #22년도 ot_total
 
 </br>
 
-- 18년도 -> 19년도: -22.2% 감소
+- 18년도 -> 19년도: `-22.2%` 감소
 ```{python}
 ((ot_19 - ot_18) / ot_18) * 100
 ```
 
 
-- 19년도 -> 20년도: -36.6% 감소
+- 19년도 -> 20년도: `-36.6%` 감소
 ```{python}
 ((ot_20 - ot_19) / ot_19) * 100 
 ```
 
 
-- 20년도 -> 21년도: -27.0% 감소
+- 20년도 -> 21년도: `-27.0%` 감소
 ```{python}
 ((ot_21 - ot_20) / ot_20) * 100
 ```
 
 
-- 21년도 -> 22년도: 2.9% 증가
+- 21년도 -> 22년도: `2.9%` 증가
 ```{python}
 ((ot_22 - ot_21) / ot_21) * 100 
 ```

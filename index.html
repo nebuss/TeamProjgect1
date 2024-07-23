@@ -171,7 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="분석-시작" class="level2">
 <h2 class="anchored" data-anchor-id="분석-시작">분석 시작!!</h2>
-<div id="90810222" class="cell" data-execution_count="1">
+<div id="58015e47" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -182,10 +182,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>원본 데이터(excel)상, 1행과 2행 일부가 병합되어 있음.</li>
 </ul>
-<div id="361ce594" class="cell" data-execution_count="2">
+<div id="e73f8366" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df_22 <span class="op">=</span> pd.read_excel(<span class="st">'data/domestic_2022.xlsx'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df_22.head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="65">
+<div class="cell-output cell-output-display" data-execution_count="128">
 <div>
 
 
@@ -245,10 +245,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>원본 데이터의 2행부터 불러오고자 header = 1로 설정하였음.</li>
 </ul>
-<div id="8190946d" class="cell" data-execution_count="3">
+<div id="75fec4fd" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_22 <span class="op">=</span> pd.read_excel(<span class="st">'data/domestic_2022.xlsx'</span>, header <span class="op">=</span> <span class="dv">1</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df_22</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="66">
+<div class="cell-output cell-output-display" data-execution_count="129">
 <div>
 
 
@@ -716,15 +716,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="변수-이름-바꿔보기">2. 변수 이름 바꿔보기</h2>
 <section id="데이터-변수-확인" class="level5">
 <h5 class="anchored" data-anchor-id="데이터-변수-확인">데이터 변수 확인</h5>
-<div id="c96c6342" class="cell" data-execution_count="4">
+<div id="d3019fc7" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df_22.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="67">
+<div class="cell-output cell-output-display" data-execution_count="130">
 <pre><code>Index(['통계분류(1)', '통계분류(2)', '국내전체', '국내숙박', '국내당일', '관광전체', '관광숙박', '관광당일',
        '기타전체', '기타숙박', '기타당일'],
       dtype='object')</code></pre>
 </div>
 </div>
-<div id="7fcb0c2f" class="cell" data-execution_count="5">
+<div id="b9f203eb" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df_22 <span class="op">=</span> df_22.rename(columns <span class="op">=</span> {<span class="st">'통계분류(1)'</span> : <span class="st">'class1'</span>,</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                                <span class="st">'통계분류(2)'</span> : <span class="st">'class2'</span>,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                                <span class="st">'국내전체'</span>    : <span class="st">'dm_total'</span>,</span>
@@ -738,7 +738,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                                <span class="st">'기타당일'</span>    : <span class="st">'ot_1day'</span></span>
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>                          })</span>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>df_22.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="68">
+<div class="cell-output cell-output-display" data-execution_count="131">
 <pre><code>Index(['class1', 'class2', 'dm_total', 'dm_stay', 'dm_1day', 'tr_total',
        'tr_stay', 'tr_1day', 'ot_total', 'ot_stay', 'ot_1day'],
       dtype='object')</code></pre>
@@ -749,7 +749,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="class1의-nan-값에-class에-맞는-값-부여-영문명으로-변경" class="level2">
 <h2 class="anchored" data-anchor-id="class1의-nan-값에-class에-맞는-값-부여-영문명으로-변경">3. ’class1’의 Nan 값에 class에 맞는 값 부여 &amp; 영문명으로 변경</h2>
-<div id="9cb873e0" class="cell" data-execution_count="6">
+<div id="353d47d8" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df_22.loc[<span class="dv">0</span>, [<span class="st">'class1'</span>]] <span class="op">=</span> <span class="st">"category-sum"</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df_22.loc[<span class="dv">1</span>:<span class="dv">2</span>, [<span class="st">'class1'</span>]] <span class="op">=</span> <span class="st">"sex"</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>df_22.loc[<span class="dv">3</span>:<span class="dv">9</span>, [<span class="st">'class1'</span>]] <span class="op">=</span> <span class="st">"age"</span></span>
@@ -759,7 +759,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>df_22.loc[<span class="dv">24</span>:<span class="dv">30</span>, [<span class="st">'class1'</span>]] <span class="op">=</span> <span class="st">"income"</span></span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>df_22.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="69">
+<div class="cell-output cell-output-display" data-execution_count="132">
 <div>
 
 
@@ -862,7 +862,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="class2도-영문으로-변경" class="level2">
 <h2 class="anchored" data-anchor-id="class2도-영문으로-변경">4. ’class2’도 영문으로 변경</h2>
-<div id="e0e469e9" class="cell" data-execution_count="7">
+<div id="120ecdbf" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df_22.loc[<span class="dv">0</span>, [<span class="st">"class2"</span>]] <span class="op">=</span> <span class="st">"sum_22"</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#sex</span></span>
@@ -908,7 +908,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>df_22.loc[df_22[<span class="st">"class2"</span>] <span class="op">==</span> <span class="st">"600만원 이상"</span>    , <span class="st">"class2"</span>] <span class="op">=</span> <span class="st">"600~"</span></span>
 <span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>df_22.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="70">
+<div class="cell-output cell-output-display" data-execution_count="133">
 <div>
 
 
@@ -1009,11 +1009,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><br></p>
 <section id="class1과-class2를-index로-설정" class="level5">
 <h5 class="anchored" data-anchor-id="class1과-class2를-index로-설정">class1과 class2를 index로 설정</h5>
-<div id="3813f620" class="cell" data-execution_count="8">
+<div id="321bf9dd" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df_22 <span class="op">=</span> df_22.set_index([<span class="st">'class1'</span>, <span class="st">'class2'</span>])</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>df_22.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="71">
+<div class="cell-output cell-output-display" data-execution_count="134">
 <div>
 
 
@@ -1188,10 +1188,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>1인 평균 지출액을 원 단위로 구하고자 기본 단위인 10억 원을 곱함</li>
 <li>이를 2023년 장래인구추계인 45,872,017명으로 나눔</li>
 </ul>
-<div id="263b6aa6" class="cell" data-execution_count="9">
+<div id="79285d60" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df_22_sum <span class="op">=</span> df_22.loc[<span class="st">"category-sum"</span>, [<span class="st">"dm_total"</span>, <span class="st">"tr_total"</span>, <span class="st">"ot_total"</span>]] <span class="op">*</span> <span class="dv">1000000000</span> <span class="op">/</span> <span class="dv">45872017</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df_22_sum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="72">
+<div class="cell-output cell-output-display" data-execution_count="135">
 <div>
 
 
@@ -1231,7 +1231,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>2018년</li>
 </ul>
-<div id="ba8ba24d" class="cell" data-execution_count="10">
+<div id="ee30636b" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df_18 <span class="op">=</span> pd.read_excel(<span class="st">'data/domestic_2018.xlsx'</span>, header <span class="op">=</span> <span class="dv">1</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>df_18 <span class="op">=</span> df_18.rename(columns <span class="op">=</span> {<span class="st">'통계분류(1)'</span> : <span class="st">'class1'</span>,</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                                <span class="st">'통계분류(2)'</span> : <span class="st">'class2'</span>,</span>
@@ -1295,17 +1295,17 @@ Workbook contains no default style, apply openpyxl's default
 <ul>
 <li>class1과 class2를 index로 설정</li>
 </ul>
-<div id="abf7158c" class="cell" data-execution_count="11">
+<div id="7b778dd6" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df_18 <span class="op">=</span> df_18.set_index([<span class="st">'class1'</span>, <span class="st">'class2'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <ul>
 <li>분석에 필요한 부분만 추출</li>
 </ul>
-<div id="7164e091" class="cell" data-execution_count="12">
+<div id="0136e639" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df_18_sum <span class="op">=</span> df_18.loc[<span class="st">"category-sum"</span>, [<span class="st">"dm_total"</span>, <span class="st">"tr_total"</span>, <span class="st">"ot_total"</span>]] <span class="op">*</span> <span class="dv">1000000000</span> <span class="op">/</span> <span class="dv">45872017</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>df_18_sum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="75">
+<div class="cell-output cell-output-display" data-execution_count="138">
 <div>
 
 
@@ -1341,7 +1341,7 @@ Workbook contains no default style, apply openpyxl's default
 <ul>
 <li>2019년</li>
 </ul>
-<div id="42ea851a" class="cell" data-execution_count="13">
+<div id="22189b16" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df_19 <span class="op">=</span> pd.read_excel(<span class="st">'data/domestic_2019.xlsx'</span>, header <span class="op">=</span> <span class="dv">1</span>)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>df_19 <span class="op">=</span> df_19.rename(columns <span class="op">=</span> {<span class="st">'통계분류(1)'</span> : <span class="st">'class1'</span>,</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>                                <span class="st">'통계분류(2)'</span> : <span class="st">'class2'</span>,</span>
@@ -1405,16 +1405,16 @@ Workbook contains no default style, apply openpyxl's default
 <ul>
 <li>class1과 class2를 index로 설정</li>
 </ul>
-<div id="5ee38ab4" class="cell" data-execution_count="14">
+<div id="0496793c" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df_19 <span class="op">=</span> df_19.set_index([<span class="st">'class1'</span>, <span class="st">'class2'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>분석에 필요한 부분만 추출</li>
 </ul>
-<div id="89f7be3e" class="cell" data-execution_count="15">
+<div id="c492ca8f" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df_19_sum <span class="op">=</span> df_19.loc[<span class="st">"category-sum"</span>, [<span class="st">"dm_total"</span>, <span class="st">"tr_total"</span>, <span class="st">"ot_total"</span>]] <span class="op">*</span> <span class="dv">1000000000</span> <span class="op">/</span> <span class="dv">45872017</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>df_19_sum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="78">
+<div class="cell-output cell-output-display" data-execution_count="141">
 <div>
 
 
@@ -1450,7 +1450,7 @@ Workbook contains no default style, apply openpyxl's default
 <ul>
 <li>2020년</li>
 </ul>
-<div id="e8b3d612" class="cell" data-execution_count="16">
+<div id="9476ac2a" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df_20 <span class="op">=</span> pd.read_excel(<span class="st">'data/domestic_2020.xlsx'</span>, header <span class="op">=</span> <span class="dv">1</span>)</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>df_20 <span class="op">=</span> df_20.rename(columns <span class="op">=</span> {<span class="st">'통계분류(1)'</span> : <span class="st">'class1'</span>,</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>                                <span class="st">'통계분류(2)'</span> : <span class="st">'class2'</span>,</span>
@@ -1514,16 +1514,16 @@ Workbook contains no default style, apply openpyxl's default
 <ul>
 <li>class1과 class2를 index로 설정</li>
 </ul>
-<div id="d9f54875" class="cell" data-execution_count="17">
+<div id="3b0a4dc5" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df_20 <span class="op">=</span> df_20.set_index([<span class="st">'class1'</span>, <span class="st">'class2'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>분석에 필요한 부분만 추출</li>
 </ul>
-<div id="d19b83ab" class="cell" data-execution_count="18">
+<div id="a414426b" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>df_20_sum <span class="op">=</span> df_20.loc[<span class="st">"category-sum"</span>, [<span class="st">"dm_total"</span>, <span class="st">"tr_total"</span>, <span class="st">"ot_total"</span>]] <span class="op">*</span> <span class="dv">1000000000</span> <span class="op">/</span> <span class="dv">45872017</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>df_20_sum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="81">
+<div class="cell-output cell-output-display" data-execution_count="144">
 <div>
 
 
@@ -1559,7 +1559,7 @@ Workbook contains no default style, apply openpyxl's default
 <ul>
 <li>2021년</li>
 </ul>
-<div id="7757be11" class="cell" data-execution_count="19">
+<div id="3396d27b" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>df_21 <span class="op">=</span> pd.read_excel(<span class="st">'data/domestic_2021.xlsx'</span>, header <span class="op">=</span> <span class="dv">1</span>)</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>df_21 <span class="op">=</span> df_21.rename(columns <span class="op">=</span> {<span class="st">'통계분류(1)'</span> : <span class="st">'class1'</span>,</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>                                <span class="st">'통계분류(2)'</span> : <span class="st">'class2'</span>,</span>
@@ -1623,16 +1623,16 @@ Workbook contains no default style, apply openpyxl's default
 <ul>
 <li>class1과 class2를 index로 설정</li>
 </ul>
-<div id="e71451d1" class="cell" data-execution_count="20">
+<div id="a8c81e9b" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>df_21 <span class="op">=</span> df_21.set_index([<span class="st">'class1'</span>, <span class="st">'class2'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>분석에 필요한 부분만 추출</li>
 </ul>
-<div id="46132cee" class="cell" data-execution_count="21">
+<div id="07d2ab8c" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>df_21_sum <span class="op">=</span> df_21.loc[<span class="st">"category-sum"</span>, [<span class="st">"dm_total"</span>, <span class="st">"tr_total"</span>, <span class="st">"ot_total"</span>]] <span class="op">*</span> <span class="dv">1000000000</span> <span class="op">/</span> <span class="dv">45872017</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>df_21_sum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="84">
+<div class="cell-output cell-output-display" data-execution_count="147">
 <div>
 
 
@@ -1669,9 +1669,9 @@ Workbook contains no default style, apply openpyxl's default
 </section>
 <section id="전처리-작업-끝" class="level4">
 <h4 class="anchored" data-anchor-id="전처리-작업-끝">전처리 작업 끝</h4>
-<div id="81ee0984" class="cell" data-execution_count="22">
+<div id="502bb8e2" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>df_18_sum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="85">
+<div class="cell-output cell-output-display" data-execution_count="148">
 <div>
 
 
@@ -1704,9 +1704,9 @@ Workbook contains no default style, apply openpyxl's default
 </div>
 </div>
 <p><br></p>
-<div id="c19cd8b6" class="cell" data-execution_count="23">
+<div id="c0dd1870" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>df_19_sum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="86">
+<div class="cell-output cell-output-display" data-execution_count="149">
 <div>
 
 
@@ -1739,9 +1739,9 @@ Workbook contains no default style, apply openpyxl's default
 </div>
 </div>
 <p><br></p>
-<div id="920259ce" class="cell" data-execution_count="24">
+<div id="22701a5a" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>df_20_sum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="87">
+<div class="cell-output cell-output-display" data-execution_count="150">
 <div>
 
 
@@ -1774,9 +1774,9 @@ Workbook contains no default style, apply openpyxl's default
 </div>
 </div>
 <p><br></p>
-<div id="1eac44c4" class="cell" data-execution_count="25">
+<div id="3c9884d5" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>df_21_sum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="88">
+<div class="cell-output cell-output-display" data-execution_count="151">
 <div>
 
 
@@ -1809,9 +1809,9 @@ Workbook contains no default style, apply openpyxl's default
 </div>
 </div>
 <p><br></p>
-<div id="7ecfea19" class="cell" data-execution_count="26">
+<div id="04a93b24" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>df_22_sum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="89">
+<div class="cell-output cell-output-display" data-execution_count="152">
 <div>
 
 
@@ -1852,10 +1852,10 @@ Workbook contains no default style, apply openpyxl's default
 <ul>
 <li>비교가 쉽도록 데이터 프레임 생성</li>
 </ul>
-<div id="4ac146a3" class="cell" data-execution_count="27">
+<div id="7a4c8174" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>ex_df <span class="op">=</span> pd.concat([df_18_sum,df_19_sum,df_20_sum,df_21_sum,df_22_sum])</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>ex_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="90">
+<div class="cell-output cell-output-display" data-execution_count="153">
 <div>
 
 
@@ -1912,7 +1912,7 @@ Workbook contains no default style, apply openpyxl's default
 </div>
 </div>
 <p><br></p>
-<div id="ee7dbc70" class="cell" data-execution_count="28">
+<div id="f1807f06" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data <span class="op">=</span> ex_df, x <span class="op">=</span> ex_df.index, y <span class="op">=</span> <span class="st">'dm_total'</span>, marker <span class="op">=</span> <span class="st">'o'</span>, label <span class="op">=</span> <span class="st">'dm_total'</span>)</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data <span class="op">=</span> ex_df, x <span class="op">=</span> ex_df.index, y <span class="op">=</span> <span class="st">'tr_total'</span>, marker <span class="op">=</span> <span class="st">'o'</span>, label <span class="op">=</span> <span class="st">'tr_total'</span>)</span>
@@ -1936,11 +1936,11 @@ Workbook contains no default style, apply openpyxl's default
 <ul>
 <li>bf_covid(코로나 이전)</li>
 </ul>
-<div id="4d784ccb" class="cell" data-execution_count="29">
+<div id="4beebfef" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>bf_covid <span class="op">=</span> pd.concat([df_18_sum, df_19_sum])</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>bf_covid <span class="op">=</span> ex_df.loc[[<span class="st">'sum_18'</span>,<span class="st">'sum_19'</span>]]</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>bf_covid</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="92">
+<div class="cell-output cell-output-display" data-execution_count="155">
 <div>
 
 
@@ -1982,11 +1982,11 @@ Workbook contains no default style, apply openpyxl's default
 <ul>
 <li>during covid(코로나 기간)</li>
 </ul>
-<div id="30c6962b" class="cell" data-execution_count="30">
+<div id="60e1f603" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>du_covid <span class="op">=</span> pd.concat([df_20_sum, df_21_sum])</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>du_covid <span class="op">=</span> ex_df.loc[[<span class="st">'sum_20'</span>,<span class="st">'sum_21'</span>]]</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>du_covid</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="93">
+<div class="cell-output cell-output-display" data-execution_count="156">
 <div>
 
 
@@ -2028,11 +2028,11 @@ Workbook contains no default style, apply openpyxl's default
 <ul>
 <li>after covid(코로나 이후)</li>
 </ul>
-<div id="4feaea97" class="cell" data-execution_count="31">
+<div id="655c8601" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>af_covid <span class="op">=</span> df_22_sum</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>af_covid</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>af_covid</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="94">
+<div class="cell-output cell-output-display" data-execution_count="157">
 <div>
 
 
@@ -2069,7 +2069,7 @@ Workbook contains no default style, apply openpyxl's default
 <ul>
 <li>한글 안깨지게 폰트 업데이트 설정(교재 p.203)</li>
 </ul>
-<div id="b3359572" class="cell" data-execution_count="32">
+<div id="87824118" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>plt.rcParams.update({<span class="st">'font.family'</span> : <span class="st">'Malgun Gothic'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
@@ -2078,7 +2078,7 @@ Workbook contains no default style, apply openpyxl's default
 </section>
 <section id="그래프를-만들어보자" class="level2">
 <h2 class="anchored" data-anchor-id="그래프를-만들어보자">그래프를 만들어보자!</h2>
-<div id="fc801704" class="cell" data-execution_count="33">
+<div id="61633810" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
@@ -2087,9 +2087,9 @@ Workbook contains no default style, apply openpyxl's default
 <ul>
 <li>bf_covid를 변환해서 18년도와 19년도 평균을 파생변수’mean_bf’로 추가</li>
 </ul>
-<div id="d0afd53a" class="cell" data-execution_count="34">
+<div id="40dfbcd0" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>bf_covid</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="97">
+<div class="cell-output cell-output-display" data-execution_count="160">
 <div>
 
 
@@ -2128,10 +2128,10 @@ Workbook contains no default style, apply openpyxl's default
 </div>
 </div>
 <p><br></p>
-<div id="13c4f108" class="cell" data-execution_count="35">
+<div id="4948bf32" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>bf <span class="op">=</span> bf_covid.transpose()</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>bf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="98">
+<div class="cell-output cell-output-display" data-execution_count="161">
 <div>
 
 
@@ -2168,10 +2168,10 @@ Workbook contains no default style, apply openpyxl's default
 <ul>
 <li>파생변수 ‘mean_bf’ 추가</li>
 </ul>
-<div id="4f92ff7f" class="cell" data-execution_count="36">
+<div id="fe7451db" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>bf[<span class="st">'mean_bf'</span>] <span class="op">=</span> (bf[<span class="st">'sum_18'</span>] <span class="op">+</span> bf[<span class="st">'sum_19'</span>])<span class="op">/</span><span class="dv">2</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>bf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="99">
+<div class="cell-output cell-output-display" data-execution_count="162">
 <div>
 
 
@@ -2213,10 +2213,10 @@ Workbook contains no default style, apply openpyxl's default
 <ul>
 <li>이를 다시 변환하여 bf_covid_sum으로 저장</li>
 </ul>
-<div id="e8864e31" class="cell" data-execution_count="37">
+<div id="e0c28b17" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>bf_covid_sum <span class="op">=</span> bf.transpose()</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>bf_covid_sum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="100">
+<div class="cell-output cell-output-display" data-execution_count="163">
 <div>
 
 
@@ -2264,10 +2264,10 @@ Workbook contains no default style, apply openpyxl's default
 <ul>
 <li>bf_covid_sum에서 마지막 행인 ’mean_bf’부분만 선택, 이를 b에 할당</li>
 </ul>
-<div id="950dead1" class="cell" data-execution_count="38">
+<div id="005509cb" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> (bf_covid_sum.loc[<span class="st">'mean_bf'</span>, :])</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="101">
+<div class="cell-output cell-output-display" data-execution_count="164">
 <pre><code>dm_total    951734.910632
 tr_total    797991.943542
 ot_total    153742.967090
@@ -2278,7 +2278,7 @@ Name: mean_bf, dtype: float64</code></pre>
 <ul>
 <li>그래프 만들기</li>
 </ul>
-<div id="311f0a43" class="cell" data-execution_count="39">
+<div id="a7d5d2dd" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>sns.barplot(data <span class="op">=</span> b)</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Covid-19 이전(2018~2019년) 1인 평균 여행 지출액'</span>)</span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'1인 평균 지출액'</span>)</span>
@@ -2299,7 +2299,7 @@ Name: mean_bf, dtype: float64</code></pre>
 </section>
 <section id="covid-19-기간20202021년-1인-평균-여행-지출액" class="level3">
 <h3 class="anchored" data-anchor-id="covid-19-기간20202021년-1인-평균-여행-지출액">Covid-19 기간(2020~2021년) 1인 평균 여행 지출액</h3>
-<div id="0490c20f" class="cell" data-execution_count="40">
+<div id="c92e4ca6" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># du_covid를 변환해서 20년도와 21년도 평균을 'mean_du'로 추가</span></span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>du <span class="op">=</span> du_covid.transpose()</span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>du[<span class="st">'mean_du'</span>] <span class="op">=</span> (du[<span class="st">'sum_20'</span>] <span class="op">+</span> du[<span class="st">'sum_21'</span>])<span class="op">/</span><span class="dv">2</span></span>
@@ -2310,7 +2310,7 @@ Name: mean_bf, dtype: float64</code></pre>
 <span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a><span class="co"># du_covid_sum에서 'mean_du'부분만 선택, 이를 d에 할당</span></span>
 <span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> (du_covid_sum.loc[<span class="st">'mean_du'</span>, :])</span>
 <span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>d</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="103">
+<div class="cell-output cell-output-display" data-execution_count="166">
 <pre><code>dm_total    545386.962165
 tr_total    471747.296396
 ot_total     73650.565660
@@ -2321,7 +2321,7 @@ Name: mean_du, dtype: float64</code></pre>
 <ul>
 <li>그래프 만들기</li>
 </ul>
-<div id="cd8ff48e" class="cell" data-execution_count="41">
+<div id="2a0ee035" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>sns.barplot(data <span class="op">=</span> d)</span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Covid-19 기간(2020~2021년) 1인 평균 여행 지출액'</span>)</span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'1인 평균 지출액'</span>)</span>
@@ -2342,10 +2342,10 @@ Name: mean_du, dtype: float64</code></pre>
 </section>
 <section id="covid-19-이후2022년-1인-평균-여행-지출액" class="level3">
 <h3 class="anchored" data-anchor-id="covid-19-이후2022년-1인-평균-여행-지출액">Covid-19 이후(2022년) 1인 평균 여행 지출액</h3>
-<div id="bcfbdf50" class="cell" data-execution_count="42">
+<div id="6a7f797e" class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> af_covid</span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="105">
+<div class="cell-output cell-output-display" data-execution_count="168">
 <div>
 
 
@@ -2381,7 +2381,7 @@ Name: mean_du, dtype: float64</code></pre>
 <ul>
 <li>그래프 만들기</li>
 </ul>
-<div id="8d4c4247" class="cell" data-execution_count="43">
+<div id="a0b87f78" class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>sns.barplot(data <span class="op">=</span> a)</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Covid-19 이후(2022년) 1인 평균 여행 지출액'</span>)</span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'1인 평균 지출액'</span>)</span>
@@ -2407,9 +2407,9 @@ Name: mean_du, dtype: float64</code></pre>
 <ul>
 <li>연도별 dm_total, tr_total, ot_total을 담은 ex_df2 생성</li>
 </ul>
-<div id="b6ea0b03" class="cell" data-execution_count="44">
+<div id="c06a2639" class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>df_18.loc[<span class="st">'category-sum'</span>, [<span class="st">'dm_total'</span>,<span class="st">'tr_total'</span>,<span class="st">'ot_total'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="107">
+<div class="cell-output cell-output-display" data-execution_count="170">
 <div>
 
 
@@ -2442,7 +2442,7 @@ Name: mean_du, dtype: float64</code></pre>
 </div>
 </div>
 <p><br></p>
-<div id="c1e2dbde" class="cell" data-execution_count="45">
+<div id="83f89a38" class="cell" data-execution_count="45">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>ex_df2 <span class="op">=</span> pd.concat([</span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>                    df_18.loc[<span class="st">'category-sum'</span>, [<span class="st">'dm_total'</span>,<span class="st">'tr_total'</span>,<span class="st">'ot_total'</span>]],</span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>                    df_19.loc[<span class="st">'category-sum'</span>, [<span class="st">'dm_total'</span>,<span class="st">'tr_total'</span>,<span class="st">'ot_total'</span>]],</span>
@@ -2452,7 +2452,7 @@ Name: mean_du, dtype: float64</code></pre>
 <span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>                   ])</span>
 <span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>                   </span>
 <span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>ex_df2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="108">
+<div class="cell-output cell-output-display" data-execution_count="171">
 <div>
 
 
@@ -2509,10 +2509,9 @@ Name: mean_du, dtype: float64</code></pre>
 </div>
 </div>
 <p><br></p>
-<ul>
-<li>년도별 dm_total</li>
-</ul>
-<div id="55423c97" class="cell" data-execution_count="46">
+<section id="년도별-dm_total" class="level4">
+<h4 class="anchored" data-anchor-id="년도별-dm_total">년도별 dm_total</h4>
+<div id="f208ea34" class="cell" data-execution_count="46">
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>sns.barplot(data <span class="op">=</span> ex_df2, x <span class="op">=</span> <span class="st">'dm_total'</span>, y <span class="op">=</span> <span class="st">'class2'</span>, palette <span class="op">=</span> <span class="st">'viridis'</span>)</span>
 <span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Class2'</span>)</span>
@@ -2521,7 +2520,7 @@ Name: mean_du, dtype: float64</code></pre>
 <span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
 <span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>plt.clf()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_14044\1539161867.py:2: FutureWarning:
+<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_5068\1539161867.py:2: FutureWarning:
 
 
 
@@ -2541,9 +2540,10 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 </div>
 <p><br></p>
-<section id="증감률-변화량-초기값-x-100" class="level3">
-<h3 class="anchored" data-anchor-id="증감률-변화량-초기값-x-100">증감률(%) = (변화량 / 초기값) x 100</h3>
-<div id="a5fb5812" class="cell" data-execution_count="47">
+<ul>
+<li>증감률(%) = (변화량 / 초기값) x 100</li>
+</ul>
+<div id="1eae63c8" class="cell" data-execution_count="47">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co">#ex_df2['증감률'] = (b년도-a년도)/a년도 X 100</span></span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>dm_18 <span class="op">=</span> ex_df2.loc[<span class="st">'sum_18'</span>, <span class="st">'dm_total'</span>] <span class="co">#18년도 dm_total</span></span>
@@ -2554,49 +2554,47 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 <p><br></p>
 <ul>
-<li>18년도 -&gt; 19년도: 2.4% 증가</li>
+<li>18년도 -&gt; 19년도: <code>2.4%</code> 증가</li>
 </ul>
-<div id="bc16c237" class="cell" data-execution_count="48">
+<div id="2b5fe0c6" class="cell" data-execution_count="48">
 <div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>((dm_19 <span class="op">-</span> dm_18) <span class="op">/</span> dm_18) <span class="op">*</span> <span class="dv">100</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="111">
+<div class="cell-output cell-output-display" data-execution_count="174">
 <pre><code>np.float64(2.4343310226508703)</code></pre>
 </div>
 </div>
-<p><br></p>
 <ul>
-<li>19년도 -&gt; 20년도: -45.4% 감소</li>
+<li>19년도 -&gt; 20년도: <code>-45.4%</code> 감소</li>
 </ul>
-<div id="19b1e5b1" class="cell" data-execution_count="49">
+<div id="e2c7ba84" class="cell" data-execution_count="49">
 <div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>((dm_20 <span class="op">-</span> dm_19) <span class="op">/</span> dm_19) <span class="op">*</span> <span class="dv">100</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="112">
+<div class="cell-output cell-output-display" data-execution_count="175">
 <pre><code>np.float64(-45.4066043500894)</code></pre>
 </div>
 </div>
-<p><br></p>
 <ul>
-<li>20년도 -&gt; 21년도: 7.3% 증가</li>
+<li>20년도 -&gt; 21년도: <code>7.3%</code> 증가</li>
 </ul>
-<div id="50b7e455" class="cell" data-execution_count="50">
+<div id="73364236" class="cell" data-execution_count="50">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>((dm_21 <span class="op">-</span> dm_20) <span class="op">/</span> dm_20) <span class="op">*</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="113">
+<div class="cell-output cell-output-display" data-execution_count="176">
 <pre><code>np.float64(7.437502591103189)</code></pre>
 </div>
 </div>
-<p><br></p>
 <ul>
-<li>22년도: 33.2% 증가</li>
+<li>21년도 -&gt; 22년도: <code>33.2%</code> 증가</li>
 </ul>
-<div id="366047e9" class="cell" data-execution_count="51">
+<div id="5dbbee24" class="cell" data-execution_count="51">
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>((dm_22 <span class="op">-</span> dm_21) <span class="op">/</span> dm_21) <span class="op">*</span> <span class="dv">100</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="114">
+<div class="cell-output cell-output-display" data-execution_count="177">
 <pre><code>np.float64(33.254871695929)</code></pre>
 </div>
 </div>
 <p><br></p>
-<ul>
-<li>년도별 tr_total</li>
-</ul>
-<div id="bd212af6" class="cell" data-execution_count="52">
+<hr>
+</section>
+<section id="년도별-tr_total" class="level4">
+<h4 class="anchored" data-anchor-id="년도별-tr_total">년도별 tr_total</h4>
+<div id="f7fe44ac" class="cell" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
 <span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>sns.barplot(data <span class="op">=</span> ex_df2, x <span class="op">=</span> <span class="st">'tr_total'</span>, y <span class="op">=</span> <span class="st">'class2'</span>, palette <span class="op">=</span> <span class="st">'viridis'</span>)</span>
 <span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Class2'</span>)</span>
@@ -2605,7 +2603,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
 <span id="cb69-7"><a href="#cb69-7" aria-hidden="true" tabindex="-1"></a>plt.clf()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_14044\1129816784.py:2: FutureWarning:
+<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_5068\1129816784.py:2: FutureWarning:
 
 
 
@@ -2626,10 +2624,10 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 <hr>
 <p><br></p>
-</section>
-<section id="증감률-변화량-초기값-x-100-1" class="level3">
-<h3 class="anchored" data-anchor-id="증감률-변화량-초기값-x-100-1">증감률(%) = (변화량 / 초기값) x 100</h3>
-<div id="81fec523" class="cell" data-execution_count="53">
+<ul>
+<li>증감률(%) = (변화량 / 초기값) x 100</li>
+</ul>
+<div id="4b3e5144" class="cell" data-execution_count="53">
 <div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>tr_18 <span class="op">=</span> ex_df2.loc[<span class="st">'sum_18'</span>, <span class="st">'tr_total'</span>] <span class="co">#18년도 tr_total</span></span>
 <span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>tr_19 <span class="op">=</span> ex_df2.loc[<span class="st">'sum_19'</span>, <span class="st">'tr_total'</span>] <span class="co">#19년도 tr_total</span></span>
 <span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>tr_20 <span class="op">=</span> ex_df2.loc[<span class="st">'sum_20'</span>, <span class="st">'tr_total'</span>] <span class="co">#20년도 tr_total</span></span>
@@ -2638,50 +2636,47 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 <p><br></p>
 <ul>
-<li>18년도 -&gt; 19년도: 8.0% 증가</li>
+<li>18년도 -&gt; 19년도: <code>8.0%</code> 증가</li>
 </ul>
-<div id="00f5d621" class="cell" data-execution_count="54">
+<div id="960a7ea4" class="cell" data-execution_count="54">
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>((tr_19 <span class="op">-</span> tr_18) <span class="op">/</span> tr_18) <span class="op">*</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="117">
+<div class="cell-output cell-output-display" data-execution_count="180">
 <pre><code>np.float64(8.009432890101149)</code></pre>
 </div>
 </div>
-<p><br></p>
 <ul>
-<li>19년도 -&gt; 20년도: -46.8% 감소</li>
+<li>19년도 -&gt; 20년도: <code>-46.8%</code> 감소</li>
 </ul>
-<div id="88ad80bc" class="cell" data-execution_count="55">
+<div id="72e0f278" class="cell" data-execution_count="55">
 <div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>((tr_20 <span class="op">-</span> tr_19) <span class="op">/</span> tr_19) <span class="op">*</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="118">
+<div class="cell-output cell-output-display" data-execution_count="181">
 <pre><code>np.float64(-46.828883335525454)</code></pre>
 </div>
 </div>
-<p><br></p>
 <ul>
-<li>20년도 -&gt; 21년도: 14.11% 증가</li>
+<li>20년도 -&gt; 21년도: <code>14.11%</code> 증가</li>
 </ul>
-<div id="4dca3f7c" class="cell" data-execution_count="56">
+<div id="432c570c" class="cell" data-execution_count="56">
 <div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>((tr_21 <span class="op">-</span> tr_20) <span class="op">/</span> tr_20) <span class="op">*</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="119">
+<div class="cell-output cell-output-display" data-execution_count="182">
 <pre><code>np.float64(14.11962598327809)</code></pre>
 </div>
 </div>
-<p><br></p>
 <ul>
-<li>21년도 -&gt; 22년도: 36.9% 증가</li>
+<li>21년도 -&gt; 22년도: <code>36.9%</code> 증가</li>
 </ul>
-<div id="51af364b" class="cell" data-execution_count="57">
+<div id="360ad078" class="cell" data-execution_count="57">
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>((tr_22 <span class="op">-</span> tr_21) <span class="op">/</span> tr_21) <span class="op">*</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="120">
+<div class="cell-output cell-output-display" data-execution_count="183">
 <pre><code>np.float64(36.99657519400009)</code></pre>
 </div>
 </div>
 <p><br></p>
 <hr>
-<ul>
-<li>년도별 ot_total</li>
-</ul>
-<div id="a5ec82f5" class="cell" data-execution_count="58">
+</section>
+<section id="년도별-ot_total" class="level4">
+<h4 class="anchored" data-anchor-id="년도별-ot_total">년도별 ot_total</h4>
+<div id="78b65f6e" class="cell" data-execution_count="58">
 <div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
 <span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>sns.barplot(data <span class="op">=</span> ex_df2, x <span class="op">=</span> <span class="st">'ot_total'</span>, y <span class="op">=</span> <span class="st">'class2'</span>, palette <span class="op">=</span> <span class="st">'viridis'</span>)</span>
 <span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Class2'</span>)</span>
@@ -2690,7 +2685,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
 <span id="cb81-7"><a href="#cb81-7" aria-hidden="true" tabindex="-1"></a>plt.clf()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_14044\3031088864.py:2: FutureWarning:
+<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_5068\3031088864.py:2: FutureWarning:
 
 
 
@@ -2713,7 +2708,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <ul>
 <li>증감률(%) = (변화량 / 초기값) x 100</li>
 </ul>
-<div id="55f1627b" class="cell" data-execution_count="59">
+<div id="3037450c" class="cell" data-execution_count="59">
 <div class="sourceCode cell-code" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>ot_18 <span class="op">=</span> ex_df2.loc[<span class="st">'sum_18'</span>, <span class="st">'ot_total'</span>] <span class="co">#18년도 ot_total</span></span>
 <span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>ot_19 <span class="op">=</span> ex_df2.loc[<span class="st">'sum_19'</span>, <span class="st">'ot_total'</span>] <span class="co">#19년도 ot_total</span></span>
 <span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a>ot_20 <span class="op">=</span> ex_df2.loc[<span class="st">'sum_20'</span>, <span class="st">'ot_total'</span>] <span class="co">#20년도 ot_total</span></span>
@@ -2722,41 +2717,38 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 <p><br></p>
 <ul>
-<li>18년도 -&gt; 19년도: -22.2% 감소</li>
+<li>18년도 -&gt; 19년도: <code>-22.2%</code> 감소</li>
 </ul>
-<div id="92196a88" class="cell" data-execution_count="60">
+<div id="e4844d0c" class="cell" data-execution_count="60">
 <div class="sourceCode cell-code" id="cb85"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>((ot_19 <span class="op">-</span> ot_18) <span class="op">/</span> ot_18) <span class="op">*</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="123">
+<div class="cell-output cell-output-display" data-execution_count="186">
 <pre><code>np.float64(-22.288018142875142)</code></pre>
 </div>
 </div>
-<p><br></p>
 <ul>
-<li>19년도 -&gt; 20년도: -36.6% 감소</li>
+<li>19년도 -&gt; 20년도: <code>-36.6%</code> 감소</li>
 </ul>
-<div id="d2791857" class="cell" data-execution_count="61">
+<div id="652a9992" class="cell" data-execution_count="61">
 <div class="sourceCode cell-code" id="cb87"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>((ot_20 <span class="op">-</span> ot_19) <span class="op">/</span> ot_19) <span class="op">*</span> <span class="dv">100</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="124">
+<div class="cell-output cell-output-display" data-execution_count="187">
 <pre><code>np.float64(-36.64072632944228)</code></pre>
 </div>
 </div>
-<p><br></p>
 <ul>
-<li>20년도 -&gt; 21년도: -27.0% 감소</li>
+<li>20년도 -&gt; 21년도: <code>-27.0%</code> 감소</li>
 </ul>
-<div id="7ddc1ac8" class="cell" data-execution_count="62">
+<div id="21468809" class="cell" data-execution_count="62">
 <div class="sourceCode cell-code" id="cb89"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>((ot_21 <span class="op">-</span> ot_20) <span class="op">/</span> ot_20) <span class="op">*</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="125">
+<div class="cell-output cell-output-display" data-execution_count="188">
 <pre><code>np.float64(-27.09825997952917)</code></pre>
 </div>
 </div>
-<p><br></p>
 <ul>
-<li>21년도 -&gt; 22년도: 2.9% 증가</li>
+<li>21년도 -&gt; 22년도: <code>2.9%</code> 증가</li>
 </ul>
-<div id="30bfb91b" class="cell" data-execution_count="63">
+<div id="ff915cc9" class="cell" data-execution_count="63">
 <div class="sourceCode cell-code" id="cb91"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>((ot_22 <span class="op">-</span> ot_21) <span class="op">/</span> ot_21) <span class="op">*</span> <span class="dv">100</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="126">
+<div class="cell-output cell-output-display" data-execution_count="189">
 <pre><code>np.float64(2.9133029133029136)</code></pre>
 </div>
 </div>
